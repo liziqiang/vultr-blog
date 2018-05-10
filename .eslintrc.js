@@ -26,6 +26,10 @@ module.exports = {
         'no-console': ['off'],
         // allow debugger during development
         'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+        // https://cn.eslint.org/docs/4.0.0/rules/no-eval
+        'no-eval': ['off'],
+        // https://cn.eslint.org/docs/4.0.0/rules/no-control-regex
+        'no-control-regex': ['off'],
         // http://eslint.cn/docs/rules/curly
         // 要求遵循大括号约定
         curly: ['error', 'all'],
@@ -55,6 +59,15 @@ module.exports = {
         // 要求对象字面量属性名称使用引号
         // 可以--fix
         // 必要是需要，关键字必须要有
-        'quote-props': ['error', 'as-needed', { keywords: true }]
+        'quote-props': ['error', 'as-needed', { keywords: true }],
+        // https://cn.eslint.org/docs/4.0.0/rules/space-before-function-paren
+        'space-before-function-paren': [
+            'error',
+            {
+                anonymous: 'never',
+                named: 'never',
+                asyncArrow: 'always'
+            }
+        ]
     }
 };
